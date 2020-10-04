@@ -1,25 +1,25 @@
-# Heterogeneous Model Transfer between Different Neural Networks
+# HMT: Heterogeneous Model Transfer between Different Neural Networks
 ICLR 2021, under review
 
 ## VGG11 to PlainNet5 (5x5 kernels)
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) with the proposed heterogeneous model transfer (HTM) method
+### Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2plain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) without the proposed HTM
+### Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2plain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint --reduce_to_baseline
 ```
 
 ## VGG to ResNet-8
-### Transfer VGG11 to PlainNet5 (5x5 kernels) with the proposed HTM
+### Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) without the proposed HTM
+### Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint --reduce_to_baseline
 ```
