@@ -48,7 +48,7 @@ CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_random_c
 ```
 
 ## 4. Note
-More details about the person re-identification task are omitted for review simplification. In final version, we will add these code.
+More details about the person re-identification task are omitted for simplifying the review. In final version, we will add these code into it.
 
 
 
