@@ -170,10 +170,10 @@ def transfer_from_hetero_model_more(model1, model2, dis='eu'):
                 # m = nn.ZeroPad2d(int((k_h1-k_h2)/2))
                 # p2_resized = m(p2.data)                   ### 3x3--->5x5, zero padding
                 # p2_resized=p2.data.resize_(k_h2,c_w2)       ### 3x3--->5x5, resize
-                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear", align_corners=True)  #nearest,bilinear,align_corners=True
+                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear")  #nearest,bilinear,align_corners=True,
             else:
                 # p1.data = p2.data
-                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear", align_corners=True)
+                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear")
                 # p2_resized=p2.data.resize_(k_h2,c_w2)      
             # step 2: 
             for j in range(c_out1):
@@ -258,10 +258,10 @@ def transfer_from_hetero_model_more_interval(model1, model2, dis='eu'):
                 # m = nn.ZeroPad2d(int((k_h1-k_h2)/2))
                 # p2_resized = m(p2.data)                   ### 3x3--->5x5, zero padding
                 # p2_resized=p2.data.resize_(k_h2,c_w2)       ### 3x3--->5x5, resize
-                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear",align_corners=True)  #nearest,bilinear
+                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear")  #nearest,bilinear,align_corners=True
             else:
                 # p1.data = p2.data
-                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear",align_corners=True)
+                p2_resized = F.interpolate(p2.data, size=[k_h1, c_w1], mode="bilinear")
                 # p2_resized=p2.data.resize_(k_h2,c_w2)      
             # step 2: 
             for j in range(c_out1):
