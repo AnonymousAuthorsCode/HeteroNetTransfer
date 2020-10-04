@@ -14,12 +14,12 @@ CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2plai
 ```
 
 ## 2. VGG to ResNet-8
-#### 2.1 Transfer VGG11 to PlainNet5 (5x5 kernels) with HMT
+#### 2.1 Transfer VGG11 to ResNet-8 with HMT
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-#### 2.2 Transfer VGG11 to PlainNet5 (5x5 kernels) without HMT
+#### 2.2 Transfer VGG11 to ResNet-8 without HMT
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint --reduce_to_baseline
 ```
