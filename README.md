@@ -1,31 +1,31 @@
 # HMT: Heterogeneous Model Transfer between Different Neural Networks
 ICLR 2021, under review
 
-## VGG11 to PlainNet5 (5x5 kernels)
+## 1. VGG11 to PlainNet5 (5x5 kernels)
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
+### 1.1 Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2plain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
+### 1.2 Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2plain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint --reduce_to_baseline
 ```
 
-## VGG to ResNet-8
-### Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
+## 2. VGG to ResNet-8
+### 2.1 Transfer VGG11 to PlainNet5 (5x5 kernels) with HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-### Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
+### 2.2 Transfer VGG11 to PlainNet5 (5x5 kernels) without HTM
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_vgg2resnet.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint --reduce_to_baseline
 ```
 
-## Ablation studies
-### shuffle HTM
+## 3. Ablation studies
+### 3.1 shuffle HTM
 Step one: In a_hetero_model_transfer.py, we uncomment line 228 and comment 229 (the transfer_from_hetero_model_more_interval function) as follows: 
 
 uncomment "indexes = [3,1,0,7,4,6,2]" for shuffle HTM
@@ -36,7 +36,7 @@ Step two:
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_random_chain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-### interval HTM
+### 3.2 interval HTM
 Step one: In a_hetero_model_transfer.py, we uncomment line 229 and comment 228 (the transfer_from_hetero_model_more_interval function) as follows:
 
 comment "indexes = [3,1,0,7,4,6,2]" to turn off shuffle HTM
@@ -47,7 +47,7 @@ Step two:
 CUDA_VISIBLE_DEVICES=0 python train_sub_cifar100_transfer_from_ImageNet_random_chain.py --use_pretrain --save_path checkpoint5x5 --load_path checkpoint
 ```
 
-## Note
+## 4. Note
 More details about the person re-identification task are omitted for review simplification. In final version, we will add these code.
 
 
